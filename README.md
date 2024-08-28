@@ -29,7 +29,11 @@ Now you can access the CRUD-Using-Laravel application at `http://localhost:8000`
 
 ## Contributing
 
-Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
+Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.    
 
 
+
+## License
+
+[MIT](https://github.com/abdullah-abdelbadee/CRUD-Using-Laravel/blob/master/LICENSE) © Abdullah Mohamed
 
