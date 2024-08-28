@@ -4,7 +4,12 @@
 {{-- @dd($posts) --}}
   <div class="text-center" >
     <a href="{{route('posts.create')}}" class="btn btn-success">Create Post</a>
-    </div>
+    <form action="{{route('softdeleted')}}" method="POST" style="display: inline" >
+      @csrf
+             <button type="submit" class="btn btn-danger">Deleteed Posts</button>
+    </form>
+            </div>
+    
 
     <table class="table table-striped">
       <thead>

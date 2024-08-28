@@ -92,4 +92,20 @@ class PostController extends Controller
         $post->delete();
         return to_route('posts.index');
     }
+    public function softdeleted(){
+        $postFromDB = Post::onlyTrashed()->get();
+        return view('posts.softdeleted',['posts'=>$postFromDB ]);
+    }
+    public function restore($id){
+        $post = Post::onlyTrashed()->where('id',$id)->first();
+        $post->restore();
+        $postFromDB = Post::onlyTrashed()->get();
+        return view('posts.softdeleted',['posts'=>$postFromDB ]);
+    }
+    public function forcedelete($id){
+        $post = Post::onlyTrashed()->where('id',$id)->first();
+        $post->forceDelete();
+        $postFromDB = Post::onlyTrashed()->get();
+        return view('posts.softdeleted',['posts'=>$postFromDB ]);
+    }
 }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->unsignedBigInteger('Posted_by'); // Ensure the data type matches the 'id' in 'users' table
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('Posted_by')
                   ->references('id')
                   ->on('users')
