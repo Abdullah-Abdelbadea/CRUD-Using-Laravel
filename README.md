@@ -31,7 +31,5 @@ Now you can access the CRUD-Using-Laravel application at `http://localhost:8000`
 
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-## License
 
-CRUD-Using-Laravel is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
