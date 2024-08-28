@@ -35,5 +35,5 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 
 ## License
 
-[MIT](https://github.com/abdullah-abdelbadee/CRUD-Using-Laravel/blob/master/LICENSE) © Abdullah Mohamed
+[Abdullah](https://github.com/bodymohammed201) © Abdullah Mohamed
 
