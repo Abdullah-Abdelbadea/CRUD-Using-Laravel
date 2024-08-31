@@ -43,7 +43,7 @@ class PostController extends Controller
        $post->description = $data['description'];
        $post->posted_by = $data['posted_by'];
        $post->save();
-       return  to_route('posts.index');
+       return  redirect()->back()->with('msg','Added Successfully....');
     }
 
     /**
@@ -81,7 +81,7 @@ class PostController extends Controller
        $post->description = $data['description'];
        $post->posted_by = $data['posted_by'];
        $post->update();
-        return  to_route('posts.show',$post->id);
+       return  to_route('posts.index')->with('msg','Updated Successfully....');
     }
 
     /**
@@ -90,7 +90,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return to_route('posts.index');
+        return to_route('posts.index')->with('msg','Deleted Successfully....');
     }
     public function softdeleted(){
         $postFromDB = Post::onlyTrashed()->get();
@@ -100,8 +100,8 @@ class PostController extends Controller
         $post = Post::onlyTrashed()->where('id',$id)->first();
         $post->restore();
         $postFromDB = Post::onlyTrashed()->get();
-        return view('posts.softdeleted',['posts'=>$postFromDB ]);
-    }
+       return  redirect()->route('posts.index')->with('msg' ,'restored successfully ..'); 
+}
     public function forcedelete($id){
         $post = Post::onlyTrashed()->where('id',$id)->first();
         $post->forceDelete();

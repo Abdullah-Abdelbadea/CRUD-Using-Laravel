@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'all posts')
+@section('title', 'all users')
 @section('content')
 {{-- @dd($posts) --}}
 @if(Session::has('msg'))
@@ -8,11 +8,11 @@
   </div>
 @endif
   <div class="text-center" >
-    <a href="{{route('posts.create')}}" class="btn btn-success">Create Post</a>
-    <form action="{{route('softdeleted')}}" method="POST" style="display: inline" >
+    <a href="{{route('users.create')}}" class="btn btn-success">Create User</a>
+    {{-- <form action="{{route('softdeleted')}}" method="POST" style="display: inline" >
       @csrf
              <button type="submit" class="btn btn-danger">Deleteed Posts</button>
-    </form>
+    </form> --}}
             </div>
     
 
@@ -20,8 +20,8 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">Posted By</th>
+          <th scope="col">name</th>
+          <th scope="col">Email</th>
           <th scope="col">Created At</th>
           <th scope="col">Updated At</th>
           <th scope="col">Actions</th>
@@ -30,17 +30,17 @@
       <tbody>
 
         <tr>
-          @foreach ($posts as $post )
+          @foreach ($users as $user )
            
-          <th scope="row">{{  $post->id}}</th>
-          <td>{{  $post->title}}</td>
-          <td>{{$post->post_creator->name}}</td>
-          <td>{{  $post->created_at}}</td>
-          <td>{{  $post->updated_at}}</td>
+          <th scope="row">{{  $user->id}}</th>
+          <td>{{  $user->name}}</td>
+          <td>{{$user->email}}</td>
+          <td>{{  $user->created_at}}</td>
+          <td>{{  $user->updated_at}}</td>
           <td>
-              <a href="{{route('posts.show',$post->id)}}" class="btn btn-info">View</a>
-              <a href="{{route('posts.edit',$post->id)}}" class="btn btn-primary">Edit</a>
-              <form action="{{route('posts.destroy',$post->id)}}" method="POST" style="display: inline" class="delete">
+              <a href="{{route('users.show',$user->id)}}" class="btn btn-info">View</a>
+              <a href="{{route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a>
+              <form action="{{route('users.destroy',$user->id)}}" method="POST" style="display: inline" class="delete">
                 @csrf
                 @method('DELETE')
                        <button type="submit" class="btn btn-danger">Delete</button>

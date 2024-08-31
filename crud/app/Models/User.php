@@ -3,14 +3,17 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-
+     
     /**
      * The attributes that are mass assignable.
      *
@@ -43,5 +46,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function posts(){
+        return $this->hasMany(Post::class ,'Posted_by','id');
+    }
+    public function getDeletedAtAttribute($value){
+        return Carbon::parse($value)->diffForHumans();
+    }
+    public function getUpdatedAtAttribute($value){
+        return Carbon::parse($value)->diffForHumans();
+    }
+    public function getCreatedAtAttribute($value){
+        return Carbon::parse($value)->diffForHumans();
     }
 }

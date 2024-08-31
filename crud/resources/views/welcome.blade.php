@@ -40,6 +40,7 @@
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">start crud Operations using laravel frame work with posts that each post has title,description and author</p>
                         <a class="btn btn-primary btn-xl" href="{{route('posts.index')}}">To Posts panel</a>
+                        <a class="btn btn-primary btn-xl" href="{{route('users.index')}}">To Users panel</a>
                     </div>
                 </div>
             </div>

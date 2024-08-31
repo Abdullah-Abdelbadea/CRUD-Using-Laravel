@@ -19,7 +19,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{route('posts.index')}}">All Posts</a>
               </li>
-             
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{{route('users.index')}}">All Users</a>
+              </li>
             </ul>
            
           </div>

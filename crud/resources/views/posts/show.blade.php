@@ -20,7 +20,7 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Name: {{$post->post_creator->name}} </h5>
-              <p class="card-text">Createdat: {{$post['created_at']}}</p>
+              <p class="card-text">Create date: {{$post['created_at']}}</p>
             
             </div>
           </div>

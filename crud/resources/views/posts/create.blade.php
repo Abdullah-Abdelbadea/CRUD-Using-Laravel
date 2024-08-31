@@ -13,6 +13,11 @@
           </ul>
       </div>
   @endif
+  @if(Session::has('msg'))
+  <div class="alert alert-success">
+      {{Session::get('msg')}}
+  </div>
+@endif
       <form method="POST" action="{{route('posts.store')}}">
         @csrf
         <div class="mb-3">
