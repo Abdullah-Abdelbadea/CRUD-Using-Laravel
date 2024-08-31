@@ -8,7 +8,7 @@ CRUD-Using-Laravel is a web application that demonstrates basic CRUD operations 
 
 To get started with CRUD-Using-Laravel, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/CRUD-Using-Laravel.git`
+1. Clone the repository: `git clone https://github.com/bodymohammed201/CRUD-Using-Laravel.git`
 2. Navigate to the project directory: `cd CRUD-Using-Laravel`
 3. Install the project dependencies: `composer install`
 4. Create an `.env` file by copying the `.env.example` file and configuring the database settings.
